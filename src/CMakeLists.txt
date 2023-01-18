@@ -1,4 +1,5 @@
 # store the specified sources list in the specified variable
+
 function(GetSources source_list store_in_var)
 	file(STRINGS "../source_lists/${source_list}" sources)
 	set(${store_in_var} ${sources} PARENT_SCOPE)
@@ -16,6 +17,7 @@ endif()
 include_directories(SYSTEM ${PANGOCAIRO_INCLUDE_DIRS})
 include_directories(SYSTEM ${GETTEXT_INCLUDE_DIR})
 include_directories(SYSTEM ${LIBDBUS_INCLUDE_DIRS})
+include_directories(SYSTEM ${OPENSSL_INCLUDE_DIR})
 if(NOT MSVC)
 	include_directories(SYSTEM ${SDL2IMAGE_INCLUDE_DIRS})
 	include_directories(SYSTEM ${SDL2MIXER_INCLUDE_DIRS})
